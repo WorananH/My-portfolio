@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-accent: hsl(var(--accent)); /* Adding a new accent color variable */
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  --animate-meteor: meteor 5s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    /* Lavender Mist: #B497BD -> HSL(288, 19%, 67%) */
+    /* Sapphire: #0F52BA -> HSL(216, 85%, 39%) */
+    /* Rose Gold Accent: #B76E79 -> HSL(351, 35%, 57%) */
+
+    --background: 288 19% 95%; /* Lighter version of Lavender Mist for main background */
+    --foreground: 216 85% 15%; /* Darker Sapphire for main text */
+
+    --card: 288 19% 80%; /* Slightly darker Lavender Mist for cards */
+
+    --primary: 216 85% 39%; /* Sapphire as the main accent color */
+    --primary-foreground: 288 19% 95%; /* Lavender Mist for text on primary buttons */
+
+    --border: 351 35% 70%; /* Lighter Rose Gold for borders */
+    --accent: 351 35% 57%; /* Rose Gold Accent for general use */
+  }
+
+  .dark {
+    /* For dark mode, we'll invert the lightness and adjust saturation/hue for readability */
+    /* Lavender Mist Dark: HSL(288, 15%, 25%) */
+    /* Sapphire Dark: HSL(216, 75%, 65%) */
+    /* Rose Gold Dark: HSL(351, 30%, 40%) */
+
+    --background: 288 15% 15%; /* Darker Lavender Mist for dark mode background */
+    --foreground: 288 19% 80%; /* Lighter Lavender Mist for dark mode text */
+
+    --card: 288 15% 25%; /* Dark Lavender Mist for cards */
+
+    --primary: 216 75% 65%; /* Lighter Sapphire for primary in dark mode */
+    --primary-foreground: 288 15% 15%; /* Darker Lavender Mist for text on primary buttons */
+
+    --border: 351 30% 40%; /* Darker Rose Gold for borders */
+    --accent: 351 30% 50%; /* Rose Gold Accent for general use */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility text-glow {
+  @apply relative;
+  /* Adjust glow color to complement Sapphire or Rose Gold */
+  text-shadow: 0 0 10px hsla(var(--primary), 0.5); /* Using primary color for glow */
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+}
+
+@utility gradient-border {
+  @apply relative rounded-md;
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+@utility cosmic-button {
+  @apply bg-indigo-600 text-white px-6 py-2 rounded-full font-medium
+         transition-all duration-300 hover:shadow-[0_0_10px_hsla(var(--primary),0.5)] /* Glow uses primary color */
+         hover:scale-105 active:scale-95;
+}
+
+@utility star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px hsla(0, 0%, 100%, 0.4); /* White glow */
+}
+
+@utility meteor {
+  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
+  box-shadow: 0 0 10px 5px hsla(0, 0%, 100%, 0.3); /* White glow */
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
