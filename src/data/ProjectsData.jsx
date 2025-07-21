@@ -46,7 +46,7 @@ export const ProjectsData = [
     role: 'Full-Stack Developer',
     summary:
       'Built a responsive e-commerce platform for a local clothing boutique, integrating payment gateways and a product management system.',
-    image: '/projects/images2.png', // Replace
+    image: '/projects/images2.png',
     technologies: [
       'React.js',
       'Node.js',
@@ -68,6 +68,52 @@ export const ProjectsData = [
       outcome: 'Launched a fully functional e-commerce site.',
       lessonsLearned:
         'Gained in-depth experience with full-stack development, API integration, and the importance of iterative development in meeting client needs.',
+      links: [
+        // { name: 'Live Demo', url: '#' },
+        { name: 'GitHub Repo', url: 'https://github.com/WorananH' },
+      ],
+    },
+  },
+
+  {
+    id: 3,
+    type: 'web-development',
+    title: 'My-Portfolio ',
+    role: 'Full-Stack Developer',
+    summary:
+      'A dynamic personal portfolio showcasing full-stack development, cloud deployment with AWS, and a unique blend of technical expertise with project management and communication skills.',
+    image: '/projects/my-portfolio.png',
+    technologies: [
+      'Javascript',
+      'React.js/Vite',
+      'Node.js',
+      'Lucide React',
+      'Tailwind CSS',
+      'AWS',
+      'Amazon S3',
+      'Amazon Cloudfront',
+      'Amazon API Gateway',
+      'AWS Lambda',
+    ],
+    details: {
+      problem:
+        'To effectively present diverse skills (dev, cloud, PM, comms) in one online platform.',
+      objective:
+        'To build a modern portfolio communicating technical prowess and team unification.',
+
+      contributions: [
+        'Designed & built React/Tailwind UI (responsive, dynamic navbar).',
+        'Deployed static assets to AWS S3/CloudFront for performance.',
+        'Developed serverless backend with AWS Lambda/API Gateway (e.g., contact form).',
+        'Integrated Amazon SES for email notifications.',
+        'Managed end-to-end project: planning, development, deployment, communication.',
+      ],
+      outcome:
+        'Launched a dynamic portfolio effectively showcasing technical skills and PM acumen.',
+
+      lessonsLearned:
+        'Enhanced expertise in AWS full-stack deployments and strategic project presentation.',
+
       links: [
         // { name: 'Live Demo', url: '#' },
         { name: 'GitHub Repo', url: 'https://github.com/WorananH' },

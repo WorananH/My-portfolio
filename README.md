@@ -51,7 +51,7 @@ This project leverages a modern stack to deliver a high-performance and scalable
 
 - **npm / Yarn:** Package managers for JavaScript.
 - **Git:** Version control system.
-- **Vite / Next.js / Create React App:** Vite for fast development server and bundling
+- **Vite / Create React App:** Vite for fast development server and bundling
 
 ## Architecture & Deployment
 
