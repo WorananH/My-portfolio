@@ -8,9 +8,10 @@ export const HeroSection = () => {
     >
       {/* Content over video - Assuming your text and image are here based on the screenshot */}
       <div className='relative z-10 flex flex-col items-center text-primary text-center'>
-        <h1 className='text-4xl md:text-5xl font-bold mb-4'>
+        <h1 className='text-4xl md:text-5xl font-bold mb-4 text-grow text-foreground                                           n          '>
           Welcome to my portfolio!
         </h1>
+
         <h2 className='text-3xl md:text-4xl font-semibold mb-6'>
           I'm Pang Hernandez
         </h2>
