@@ -25,9 +25,10 @@ export const AboutSection = () => {
             </p>
 
             <p className='text-muted-foreground'>
-              My hands-on experience in web development and cloud deployments
-              equips me to bridge technical and non-technical teams, helping
-              ensure projects run smoothly from start to finish.
+              My hands-on expertise in web development and cloud deployments
+              empowers me to translate technical complexities into clear,
+              actionable insights, ensuring projects move smoothly from concept
+              to completion.
             </p>
             <p className='text-muted-foreground'>
               I’m a proactive, adaptable learner with a strong focus on Agile

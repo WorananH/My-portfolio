@@ -96,8 +96,9 @@ export const SkillsSection = () => {
         </div>
         {/* Section: Certifications & Languages */}
         <div className='bg-primary dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 mt-12'>
-          <h3 className='text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-4 flex items-end-safe'>
-            <Award className='mr-3 text-3xl' /> Certifications & Languages
+          <h3 className='text-2xl font-semibold text-black dark:text-indigo-400 mb-4 flex items-end-safe'>
+            <Award className='mr-3 text-3xl text-black' /> Certifications &
+            Languages
           </h3>
           <ul className='list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2'>
             <li>
